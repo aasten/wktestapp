@@ -35,6 +35,34 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+
+
+		<!-- JSTL for JSP -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- to compile JSP -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<!--&lt;!&ndash; to compile JSP &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.eclipse.jdt.core.compiler</groupId>-->
+			<!--<artifactId>ecj</artifactId>-->
+			<!--<version>4.6.1</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+
 	</dependencies>
 
 	<dependencyManagement>
