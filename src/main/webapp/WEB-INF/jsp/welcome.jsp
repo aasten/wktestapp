@@ -12,14 +12,14 @@
 
 <c:choose>
     <c:when test="${authorized}">
-        <c:out value="Authorized">
+        <c:out value="Authorized" />
     </c:when>
     <c:otherwise>
-        <form action="<c:url value=${pageContext.request.contextPath} />">
-        <input type="text" name="name" required/>
-        <input type="password" name="password" required/>
-        <label><input type="checkbox" name="rememberme" />Remember me</label>
-        <input type="submit" value="Login" />
+        <form method="post" action="<c:url value="${pageContext.request.contextPath}" />">
+            <input type="text" name="name" required/>
+            <input type="password" name="password" required/>
+            <label><input type="checkbox" name="rememberme" />Remember me</label>
+            <input type="submit" value="Login" />
         </form>
     </c:otherwise>
 </c:choose>
