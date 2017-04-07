@@ -9,13 +9,6 @@
 	<link href="${cssPath}" rel="stylesheet" />
 </head>
 <body>
-s
-<c:out value="${sessionScope['authorized']}" />
-s
-<c:out value="${sessionScope.authorized}" />
-ss
-<c:out value="${sessionScope}" />
-
 
 <c:choose>
     <c:when test="${not empty authorized}">
