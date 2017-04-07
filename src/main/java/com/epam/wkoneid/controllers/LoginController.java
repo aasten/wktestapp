@@ -18,13 +18,14 @@ public class LoginController {
     public String login(Model model, HttpServletRequest request) {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
-        if(name == "test" && password == "test") {
-            model.addAttribute("authorized", true);
+        if(("test").equals(name) && ("test").equals(password)) {
+            model.addAttribute("authorized", name);
+            // also setting session attribute of successful authorization
+            // this also will be saved if mistaken post-request is sent after successful login
+            request.getSession().setAttribute("authorized", name);
             if (request.getParameter("rememberme") != null) {
                 // checkbox is checked
-                // also setting session attribute of successful authorization
-                // this also will be saved if mistaken post-request is sent after successful login
-                request.getSession().setAttribute("authorized", true);
+
             }
         }
         return "welcome";
@@ -34,8 +35,9 @@ public class LoginController {
     public String welcome(Model model, HttpServletRequest request) {
         HttpSession s = request.getSession(false);
         if(null != s) {
-            if(s.getAttribute("authorized") != null) {
-                model.addAttribute("authorized", true);
+            String authorizedUser = (String) s.getAttribute("authorized");
+            if(authorizedUser != null) {
+                model.addAttribute("authorized", authorizedUser);
             }
         }
         return "welcome";

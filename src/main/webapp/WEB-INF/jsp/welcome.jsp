@@ -11,8 +11,8 @@
 <body>
 
 <c:choose>
-    <c:when test="${authorized}">
-        <c:out value="Authorized" />
+    <c:when test="${not empty authorized}">
+        <c:out value="Welcome, ${authorized}!" />
     </c:when>
     <c:otherwise>
         <form method="post" action="<c:url value="${pageContext.request.contextPath}" />">
