@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,13 @@
 	<link href="${cssPath}" rel="stylesheet" />
 </head>
 <body>
+s
+<c:out value="${sessionScope['authorized']}" />
+s
+<c:out value="${sessionScope.authorized}" />
+ss
+<c:out value="${sessionScope}" />
+
 
 <c:choose>
     <c:when test="${not empty authorized}">
